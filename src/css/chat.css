@@ -1,0 +1,102 @@
+.chatboxchat {
+	position: fixed;
+	position:expression("absolute");
+	width: 260px;
+	display:none;
+	box-shadow: 0 0 10px rgba(51, 51, 51, 0.38);
+	z-index:14;
+	border-radius: 6px 6px 0 0;
+}
+
+.chatboxhead {
+background-color: #4ca5f7;
+    padding: 7px 4px;
+    color: #ffffff;
+    border: 1px solid #4eb5ff;
+    cursor: pointer;
+    font-size: 12.5px;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+    width: 261px;
+	text-overflow:ellipsis;
+white-space:nowrap; 
+overflow:hidden;
+}
+
+.chatboxblink {
+background-color: #276fdc;
+border-color: #2865bf;
+}
+
+.chatboxcontent {
+	font-family: arial,sans-serif;
+	font-size: 13px;
+	color: #333333;
+	height:250px;
+	overflow-y:auto;
+	overflow-x:auto;
+	padding:8px;
+	border-bottom:1px solid #eeeeee;
+	background-color: #ffffff;
+	line-height: 1.3em;
+	    margin-bottom: 0px;
+}
+
+.chatboxinput {
+	padding: 5px;
+	background-color: #ffffff;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+}
+
+.chatboxtextarea {
+	width: 100%;
+	height:34px;
+	padding:3px 0pt 3px 3px;
+	border:1px solid;
+	overflow:hidden;
+}
+
+.chatboxtextareaselected {
+	border: 2px solid #f99d39;
+	margin:0;
+}
+
+
+
+.direct-chat-timestamp{
+width:100%;
+text-align:right;
+}
+
+.chatboxmessagefrom {
+	margin-left:-1em;
+	font-weight: bold;
+}
+
+.chatboxmessagecontent {
+}
+
+.chatboxoptions {
+	float: right;
+}
+
+.chatboxoptions a {
+	text-decoration: none;
+	color: white;
+	font-weight:bold;
+	font-family:Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+}
+.chatboxmessage{
+	width:100%;
+	display:block;
+	font-size:10.5px;
+}
+.chatboxtitle {
+	float: left;
+}
+.direct-chat-name {
+  font-size: 11px;
+  color: #006C8C;
+}

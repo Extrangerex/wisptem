@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="Israel Junior" content="">
+    <title>JITECH FI</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/full-width-pics.css" rel="stylesheet">
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body class="py-5 bg-image-full" style="background-image: url('images/fondos.jpg');">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">JITECH FI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header - set the background image for the header in the line below -->
+    <header class="py-5 bg-image-full" style="background-image: url('images/banner.jpg');">
+      <img class="img-fluid d-block mx-auto" src="images/logo1.png" width="160px" height="120px"  alt="">
+    </header>
+    <!-- Content section -->
+    <section class="py-5">
+      <div class="container">
+        <legend style="color: black;">Servicio Suspendido !</legend>
+        <h3  style="color: red;">
+        <b>Estimado Cliente su Servicio está Suspendido por Falta de Pago .
+        <br>
+        Acérquese al colmado Bodega Vazquez (Nao) ubicado en la calle 2 esquina 6 de Korea para Regularizar el Pago Respectivo .
+        <br>
+        O comuniquese al Télefono (829)-815-5818!
+        </b> </h3>
+      </div>
+    </section>
+    <!-- Image Section - set the background image for the header in the line below -->
+    <section class="py-3 bg-image-full">
+      <div align="center"> <img src="images/corte-internet2.png" width="600px" height="300px"></div>
+      <div style="height: 10px; width: 100px"></div>
+    </section>
+    <!-- Content section -->
+    
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; JI TECNO SOLUTIONS 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+  $(document).ready(function(){
+  
+  //create a new WebSocket object.
+  var wsUri = "ws://200.50.0.200:5050";
+  websocket = new WebSocket(wsUri);
+  var myip;
+  // El evento se produce cuando se establece la conexión
+  websocket.onopen = function(ev) {
+  $('#message_box').append(createLi('','System','conectado.png','Connected !!!'));
+  };
+  // El evento se produce cuando hay un error
+  websocket.onerror = function(ev){
+  $('#message_box').append(createLi('','System','error.png','Error Occurred '+ev.data));
+  };
+  // El evento se produce cuando la conexión se cierra desde el servidor
+  websocket.onclose = function(ev){
+  $('#message_box').append(createLi('','System','desconectado.png','Connection Closed'));
+  };
+  // El evento se produce cuando el cliente recibe datos del servidor
+  websocket.onmessage = function(ev) {
+  var msg = JSON.parse(ev.data); //PHP sends Json data
+  var date = msg.date;
+  var type = msg.type; //message type
+  var umsg = msg.message; //message text
+  var uname = msg.name; //user name
+  if(!uname){
+  uname ='system' ;
+  }
+  $('#message_box').append(createMessage (date,type,umsg,uname)) ;
+  $('#btn-input').val(''); //reset text
+  };
+  function createMessage (date,type,msg,username) {
+  
+  var img = 'chrome.png';
+  var myname = $('#name').val(); //get user name
+  
+  if(username == myname){
+  img = 'firefox.png';
+  }
+  if(username == 'system'){
+  var img = 'conectado.png';
+  if(type=='desconectado'){
+  img = 'desconectado.png';
+  }
+  }
+  return createLi(date,username,img,msg) ;
+  }
+  function createLi(date,username,img,text)
+  {
+  if(text)
+  {
+  var li = $(' <li class="left clearfix"><span class="chat-img pull-left"><img src="'+img+'" alt="User Avatar" class="img-circle" /></span><div class="chat-body clearfix"><div class="header"><strong class="primary-font">'+date+' '+username+'</strong> </div><p>'+text+'</p></div></li>');
+  var myname = $('#name').val(); //get user name
+  if(username == myname){
+  li = $(' <li class="right clearfix"><span class="chat-img pull-right"><img src="'+img+'" alt="User Avatar" class="img-circle" /></span><div class="chat-body clearfix"><div class="header"><strong class="primary-font">'+date+' '+username+'</strong> </div><p>'+text+'</p></div></li>');
+  }
+  return li;
+  }
+  return "";
+  }
+  $('#btn-input').keypress(function(e) {
+  var keycode = (e.keyCode ? e.keyCode : e.which);
+  if (keycode == '13') {
+  
+  var mymessage = $('#btn-input').val();  //get message text
+  var myname = $('#name').val(); //get user name
+  
+  
+  if(myname == ""){ //emtpy user?
+  
+  alert("Ingrese su nombre!");
+  $('#name').attr("autofocus",true);
+  return;
+  }
+  if(mymessage == ""){ //emtpy message?
+  
+  alert("Escribe su mensaje!");
+  return;
+  }
+  
+  //prepare json data
+  var msg = {
+  message: mymessage,
+  name: myname,
+  };
+  
+  //convert and send data to server
+  websocket.send(JSON.stringify(msg));
+  return false;
+  }
+  });
+  $('#btn-chat').click(function(){
+  var mymessage = $('#btn-input').val();  //get message text
+  var myname = $('#name').val(); //get user name
+  
+  
+  if(myname == ""){ //emtpy user?
+  
+  alert("Ingrese su nombre!");
+  $('#name').attr("autofocus",true);
+  return;
+  }
+  if(mymessage == ""){ //emtpy message?
+  
+  alert("Escribe su mensaje!");
+  return;
+  }
+  
+  //prepare json data
+  var msg = {
+  message: mymessage,
+  name: myname,
+  };
+  
+  //convert and send data to server
+  websocket.send(JSON.stringify(msg));
+  });
+  });
+  function pulsar(e) {
+  if (e.keyCode === 13 && !e.shiftKey) {
+  e.preventDefault();
+  var boton = document.getElementById("btn-chat");
+  angular.element(boton).triggerHandler('click');
+  }
+  }
+  </script>
+</html>
