@@ -1,9 +1,9 @@
 ﻿<?php
 /*Datos de conexion a la base de datos*/
-define('DB_HOST','127.0.0.1');
+define('DB_HOST','db');
 define('DB_USER','root');//Usuario de tu base de datos
-define('DB_PASS','Sysadmin2021');//Contraseña del usuario de la base de datos
-define('DB_NAME','3015');//Nombre de la base de datos
+define('DB_PASS','admin123456');//Contraseña del usuario de la base de datos
+define('DB_NAME','3940');//Nombre de la base de datos
 
 	
 
@@ -66,5 +66,3 @@ define('RNC_COMP', '   RNC: '.$row['rnc']);
 
 define('Token', '914014782:AAH_lovY8VUjYxS6JcGZGhKvz86CaiJ68800000k');
 define('ChatId', '-378479300631');
-
-?>
