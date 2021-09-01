@@ -2,8 +2,8 @@
 /*Datos de conexion a la base de datos*/
 define('DB_HOST', 'db');
 define('DB_USER', 'root'); //Usuario de tu base de datos
-define('DB_PASS', 'admin123456'); //Contraseña del usuario de la base de datos
-define('DB_NAME', '8585'); //Nombre de la base de datos
+define('DB_PASS', 'Sysadmin2021'); //Contraseña del usuario de la base de datos
+define('DB_NAME', '1517'); //Nombre de la base de datos
 
 
 

@@ -6,7 +6,7 @@ services:
       - "3306:3306"
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      - MYSQL_ROOT_PASSWORD=admin123456
+      - MYSQL_ROOT_PASSWORD=Sysadmin2021
     volumes:
       - "./wisptem.sql:/docker-entrypoint-initdb.d/2.sql"
   myadmin:
@@ -18,6 +18,6 @@ services:
   web:
     build: .
     ports:
-      - "8586:80"
+      - "1519:80"
     links:
       - mysql:db

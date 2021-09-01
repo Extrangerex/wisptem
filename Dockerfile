@@ -1,4 +1,4 @@
-FROM polinux/httpd-php
+FROM polinux/httpd-php:php70
 COPY ./src /var/www/html
 WORKDIR /etc
 COPY ./php.ini .

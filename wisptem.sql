@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `8585`
+-- Base de datos: `1517`
 --
-CREATE DATABASE IF NOT EXISTS `8585` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE `8585`;
+CREATE DATABASE IF NOT EXISTS `1517` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `1517`;
 
 -- --------------------------------------------------------
 
@@ -25630,9 +25630,9 @@ INSERT INTO `remoteaddress` (`id`, `ip`, `id_mk`) VALUES
 (25551, '10.60.100.252', 1),
 (25552, '10.60.100.253', 1),
 (25553, '10.60.100.254', 1),
-(8585, '10.60.11.233', 1),
-(18585, '10.60.51.113', 1),
-(28585, '10.60.90.246', 1);
+(1517, '10.60.11.233', 1),
+(11517, '10.60.51.113', 1),
+(21517, '10.60.90.246', 1);
 
 -- --------------------------------------------------------
 
