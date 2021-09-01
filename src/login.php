@@ -215,4 +215,3 @@ $fec = date("Y-m-d H:i:s");
 mysqli_close($con);
 
 }
-?>
