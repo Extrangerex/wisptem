@@ -3,7 +3,7 @@
 define('DB_HOST','db');
 define('DB_USER','root');//Usuario de tu base de datos
 define('DB_PASS','admin123456');//Contraseña del usuario de la base de datos
-define('DB_NAME','7078');//Nombre de la base de datos
+define('DB_NAME','8050');//Nombre de la base de datos
 
 	
 

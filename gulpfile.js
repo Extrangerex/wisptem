@@ -18,7 +18,7 @@ gulp.task("deploy", () => {
 
     fs.writeFileSync(
       `./wisptem.sql`,
-      currentSql.replace(new RegExp(3015, "g"), dbPort)
+      currentSql.replace(new RegExp(39403, "g"), dbPort)
     );
 
     const dbConfig = fs.readFileSync("./src/config/db.original.php").toString();
