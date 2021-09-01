@@ -1,8 +1,24 @@
+-- --------------------------------------------------------
+-- Host:                         10.10.0.2
+-- Versión del servidor:         5.7.33-0ubuntu0.16.04.1 - (Ubuntu)
+-- SO del servidor:              Linux
+-- HeidiSQL Versión:             11.3.0.6295
+-- --------------------------------------------------------
 
-DROP DATABASE IF EXISTS `39403`;
-CREATE DATABASE IF NOT EXISTS `39403`;
-USE `39403`;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Volcando estructura de base de datos para 7078
+DROP DATABASE IF EXISTS `7078`;
+CREATE DATABASE IF NOT EXISTS `7078` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `7078`;
+
+-- Volcando estructura para tabla 7078.accesorios
 DROP TABLE IF EXISTS `accesorios`;
 CREATE TABLE IF NOT EXISTS `accesorios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -12,6 +28,11 @@ CREATE TABLE IF NOT EXISTS `accesorios` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.accesorios: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `accesorios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `accesorios` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.categoria
 DROP TABLE IF EXISTS `categoria`;
 CREATE TABLE IF NOT EXISTS `categoria` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -20,12 +41,14 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
-
+-- Volcando datos para la tabla 7078.categoria: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
 INSERT INTO `categoria` (`ID`, `abreviacion`, `categoria`) VALUES
 	(1, 'RES', 'PLAN RESIDENCIAL'),
 	(2, 'NEG', 'PLAN NEGOCIO');
+/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 
-
+-- Volcando estructura para tabla 7078.categoria_producto
 DROP TABLE IF EXISTS `categoria_producto`;
 CREATE TABLE IF NOT EXISTS `categoria_producto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -36,6 +59,11 @@ CREATE TABLE IF NOT EXISTS `categoria_producto` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.categoria_producto: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `categoria_producto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `categoria_producto` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.clientesp
 DROP TABLE IF EXISTS `clientesp`;
 CREATE TABLE IF NOT EXISTS `clientesp` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -72,7 +100,11 @@ CREATE TABLE IF NOT EXISTS `clientesp` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.clientesp: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `clientesp` DISABLE KEYS */;
+/*!40000 ALTER TABLE `clientesp` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.conexiones
 DROP TABLE IF EXISTS `conexiones`;
 CREATE TABLE IF NOT EXISTS `conexiones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -84,6 +116,11 @@ CREATE TABLE IF NOT EXISTS `conexiones` (
   KEY `ip` (`ip`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED;
 
+-- Volcando datos para la tabla 7078.conexiones: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `conexiones` DISABLE KEYS */;
+/*!40000 ALTER TABLE `conexiones` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.currencies
 DROP TABLE IF EXISTS `currencies`;
 CREATE TABLE IF NOT EXISTS `currencies` (
   `id` int(11) DEFAULT NULL,
@@ -95,10 +132,13 @@ CREATE TABLE IF NOT EXISTS `currencies` (
   `code` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
-
+-- Volcando datos para la tabla 7078.currencies: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `currencies` DISABLE KEYS */;
 INSERT INTO `currencies` (`id`, `name`, `symbol`, `precision`, `thousand_separator`, `decimal_separator`, `code`) VALUES
 	(1, 'Pesos Dominicanos', 'RD $', 1, '1', '2', '1');
+/*!40000 ALTER TABLE `currencies` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.empleados
 DROP TABLE IF EXISTS `empleados`;
 CREATE TABLE IF NOT EXISTS `empleados` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -118,6 +158,11 @@ CREATE TABLE IF NOT EXISTS `empleados` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.empleados: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `empleados` DISABLE KEYS */;
+/*!40000 ALTER TABLE `empleados` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.facturas
 DROP TABLE IF EXISTS `facturas`;
 CREATE TABLE IF NOT EXISTS `facturas` (
   `numero_factura` int(11) NOT NULL,
@@ -132,6 +177,11 @@ CREATE TABLE IF NOT EXISTS `facturas` (
   UNIQUE KEY `numero_factura` (`numero_factura`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.facturas: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `facturas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `facturas` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.financiamiento
 DROP TABLE IF EXISTS `financiamiento`;
 CREATE TABLE IF NOT EXISTS `financiamiento` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -144,13 +194,16 @@ CREATE TABLE IF NOT EXISTS `financiamiento` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
-
+-- Volcando datos para la tabla 7078.financiamiento: ~4 rows (aproximadamente)
+/*!40000 ALTER TABLE `financiamiento` DISABLE KEYS */;
 INSERT INTO `financiamiento` (`id`, `id_cliente`, `monto`, `cuota`, `fecha_inicial`, `fecha_final`, `estado`) VALUES
 	(1, 5839, 3000, 4, '2019-05-01', '2019-09-01', 'saldado'),
 	(2, 5840, 1000, 2, '2019-04-30', '2019-06-30', 'activo'),
 	(3, 5846, 1200, 3, '2019-06-15', '2019-09-15', 'activo'),
 	(4, 5877, 1000, 4, '2019-09-15', '2020-01-15', 'activo');
+/*!40000 ALTER TABLE `financiamiento` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.gastos
 DROP TABLE IF EXISTS `gastos`;
 CREATE TABLE IF NOT EXISTS `gastos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -160,6 +213,11 @@ CREATE TABLE IF NOT EXISTS `gastos` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
+-- Volcando datos para la tabla 7078.gastos: 0 rows
+/*!40000 ALTER TABLE `gastos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `gastos` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.instalacion
 DROP TABLE IF EXISTS `instalacion`;
 CREATE TABLE IF NOT EXISTS `instalacion` (
   `idinstalacion` int(11) NOT NULL AUTO_INCREMENT,
@@ -184,6 +242,11 @@ CREATE TABLE IF NOT EXISTS `instalacion` (
   PRIMARY KEY (`idinstalacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.instalacion: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `instalacion` DISABLE KEYS */;
+/*!40000 ALTER TABLE `instalacion` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.licencia
 DROP TABLE IF EXISTS `licencia`;
 CREATE TABLE IF NOT EXISTS `licencia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -193,6 +256,11 @@ CREATE TABLE IF NOT EXISTS `licencia` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.licencia: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `licencia` DISABLE KEYS */;
+/*!40000 ALTER TABLE `licencia` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.logs
 DROP TABLE IF EXISTS `logs`;
 CREATE TABLE IF NOT EXISTS `logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -202,6 +270,8 @@ CREATE TABLE IF NOT EXISTS `logs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.logs: ~48 rows (aproximadamente)
+/*!40000 ALTER TABLE `logs` DISABLE KEYS */;
 INSERT INTO `logs` (`id`, `user_id`, `fecha`, `detalle`) VALUES
 	(1, 11, '2021-07-20 14:11:24', 'inicio sesion desde 192.168.84.254'),
 	(2, 11, '2021-07-20 16:30:24', 'inicio sesion desde 192.168.0.196'),
@@ -251,7 +321,9 @@ INSERT INTO `logs` (`id`, `user_id`, `fecha`, `detalle`) VALUES
 	(46, 11, '2021-08-12 22:16:32', 'inicio sesion desde 10.60.1.170'),
 	(47, 11, '2021-08-13 02:18:58', 'inicio sesion desde 152.0.196.149'),
 	(48, 11, '2021-08-29 21:23:57', 'inicio sesion desde 148.101.4.69');
+/*!40000 ALTER TABLE `logs` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.mensajes
 DROP TABLE IF EXISTS `mensajes`;
 CREATE TABLE IF NOT EXISTS `mensajes` (
   `id_mensaje` tinytext NOT NULL,
@@ -260,6 +332,11 @@ CREATE TABLE IF NOT EXISTS `mensajes` (
   `mensaje` varchar(161) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- Volcando datos para la tabla 7078.mensajes: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `mensajes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mensajes` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.mikrotik
 DROP TABLE IF EXISTS `mikrotik`;
 CREATE TABLE IF NOT EXISTS `mikrotik` (
   `idmikrotik` int(11) NOT NULL AUTO_INCREMENT,
@@ -276,6 +353,11 @@ CREATE TABLE IF NOT EXISTS `mikrotik` (
   PRIMARY KEY (`idmikrotik`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.mikrotik: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `mikrotik` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mikrotik` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.olts
 DROP TABLE IF EXISTS `olts`;
 CREATE TABLE IF NOT EXISTS `olts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -290,10 +372,13 @@ CREATE TABLE IF NOT EXISTS `olts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
-
+-- Volcando datos para la tabla 7078.olts: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `olts` DISABLE KEYS */;
 INSERT INTO `olts` (`id`, `nodo`, `name`, `ip`, `telnetport`, `username`, `password`, `hwversion`, `vlan`) VALUES
 	(2, 'Principal', 'JIG Video Games', '192.168.85.1', 2333, 'jitech', 'Emmanise40854085', '2', 40);
+/*!40000 ALTER TABLE `olts` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.onus_configured
 DROP TABLE IF EXISTS `onus_configured`;
 CREATE TABLE IF NOT EXISTS `onus_configured` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -309,6 +394,8 @@ CREATE TABLE IF NOT EXISTS `onus_configured` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
 
+-- Volcando datos para la tabla 7078.onus_configured: ~7 rows (aproximadamente)
+/*!40000 ALTER TABLE `onus_configured` DISABLE KEYS */;
 INSERT INTO `onus_configured` (`id`, `id_olt`, `id_cliente`, `board`, `port`, `idx`, `tipo_onu`, `vlan`, `sn`, `fecha`) VALUES
 	(1, 2, 6011, 2, 9, 1, 'F660V6.0', 40, 'ZTEGC8DBE378', '2021-04-13 12:25:01'),
 	(2, 2, 3136, 2, 9, 5, 'HG8245H5', 40, 'HWTC9296149E', '2021-04-13 12:24:59'),
@@ -317,7 +404,9 @@ INSERT INTO `onus_configured` (`id`, `id_olt`, `id_cliente`, `board`, `port`, `i
 	(29, 2, 6015, 2, 1, 1, 'HG8245H5', 40, 'HWTCBFF9719E', '2021-04-21 10:01:24'),
 	(30, 2, 6015, 2, 1, 24, 'HG8245H5', 40, 'HWTCBFF9719E', '2021-04-21 10:08:24'),
 	(31, 2, 6017, 2, 9, 1, 'HG8245H5', 40, 'HWTC95326F9E', '2021-04-29 17:19:04');
+/*!40000 ALTER TABLE `onus_configured` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.onu_type
 DROP TABLE IF EXISTS `onu_type`;
 CREATE TABLE IF NOT EXISTS `onu_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -331,6 +420,8 @@ CREATE TABLE IF NOT EXISTS `onu_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
+-- Volcando datos para la tabla 7078.onu_type: ~6 rows (aproximadamente)
+/*!40000 ALTER TABLE `onu_type` DISABLE KEYS */;
 INSERT INTO `onu_type` (`id`, `pon_type`, `onu_type`, `ether_port`, `wifi_port`, `voip_port`, `catv`, `capability`) VALUES
 	(1, 'GPON', 'CGG-F781W', 1, 1, 0, 0, 'Bridging/Routing	'),
 	(2, 'GPON', 'ZTE-F600', 4, 2, 1, 0, 'Bridging/Routing'),
@@ -338,7 +429,9 @@ INSERT INTO `onu_type` (`id`, `pon_type`, `onu_type`, `ether_port`, `wifi_port`,
 	(4, 'GPON', 'HG8145V5', 4, 2, 1, 0, 'Bridging/Routing'),
 	(5, 'GPON', 'F660V6.0', 4, 1, 0, 0, 'Bridging/Routing'),
 	(6, 'GPON', '	HG8245H5', 4, 1, 0, 0, 'Bridging/Routing');
+/*!40000 ALTER TABLE `onu_type` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.perfil
 DROP TABLE IF EXISTS `perfil`;
 CREATE TABLE IF NOT EXISTS `perfil` (
   `id_perfil` int(11) NOT NULL AUTO_INCREMENT,
@@ -356,9 +449,13 @@ CREATE TABLE IF NOT EXISTS `perfil` (
   PRIMARY KEY (`id_perfil`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.perfil: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `perfil` DISABLE KEYS */;
 INSERT INTO `perfil` (`id_perfil`, `nombre_empresa`, `direccion`, `ciudad`, `rnc`, `estado`, `telefono`, `email`, `impuesto`, `moneda`, `logo_url`, `prologa`) VALUES
 	(1, 'TAMA', 'DOs', 'SANT', '0000000000265', 'SAN', '829-866-0000', 'tama@gmail.com', 20, 'RD $', '../images/1628820566_001.jpeg', 5);
+/*!40000 ALTER TABLE `perfil` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.planes
 DROP TABLE IF EXISTS `planes`;
 CREATE TABLE IF NOT EXISTS `planes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -368,9 +465,13 @@ CREATE TABLE IF NOT EXISTS `planes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.planes: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `planes` DISABLE KEYS */;
 INSERT INTO `planes` (`id`, `nombre`, `plan`, `precio`) VALUES
 	(4, 'Plan Basico 3M', '3M', '500');
+/*!40000 ALTER TABLE `planes` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.productos
 DROP TABLE IF EXISTS `productos`;
 CREATE TABLE IF NOT EXISTS `productos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -382,6 +483,11 @@ CREATE TABLE IF NOT EXISTS `productos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- Volcando datos para la tabla 7078.productos: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `productos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `productos` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.productos_vendidos
 DROP TABLE IF EXISTS `productos_vendidos`;
 CREATE TABLE IF NOT EXISTS `productos_vendidos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -395,6 +501,11 @@ CREATE TABLE IF NOT EXISTS `productos_vendidos` (
   CONSTRAINT `productos_vendidos_ibfk_2` FOREIGN KEY (`id_venta`) REFERENCES `ventas` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- Volcando datos para la tabla 7078.productos_vendidos: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `productos_vendidos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `productos_vendidos` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.remoteaddress
 DROP TABLE IF EXISTS `remoteaddress`;
 CREATE TABLE IF NOT EXISTS `remoteaddress` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -403,6 +514,8 @@ CREATE TABLE IF NOT EXISTS `remoteaddress` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25554 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.remoteaddress: ~25,129 rows (aproximadamente)
+/*!40000 ALTER TABLE `remoteaddress` DISABLE KEYS */;
 INSERT INTO `remoteaddress` (`id`, `ip`, `id_mk`) VALUES
 	(425, '10.60.1.173', 1),
 	(426, '10.60.1.174', 1),
@@ -2994,7 +3107,7 @@ INSERT INTO `remoteaddress` (`id`, `ip`, `id_mk`) VALUES
 	(3012, '10.60.11.230', 1),
 	(3013, '10.60.11.231', 1),
 	(3014, '10.60.11.232', 1),
-	(39403, '10.60.11.233', 1),
+	(7078, '10.60.11.233', 1),
 	(3016, '10.60.11.234', 1),
 	(3017, '10.60.11.235', 1),
 	(3018, '10.60.11.236', 1),
@@ -12995,7 +13108,7 @@ INSERT INTO `remoteaddress` (`id`, `ip`, `id_mk`) VALUES
 	(13012, '10.60.51.110', 1),
 	(13013, '10.60.51.111', 1),
 	(13014, '10.60.51.112', 1),
-	(139403, '10.60.51.113', 1),
+	(17078, '10.60.51.113', 1),
 	(13016, '10.60.51.114', 1),
 	(13017, '10.60.51.115', 1),
 	(13018, '10.60.51.116', 1),
@@ -22996,7 +23109,7 @@ INSERT INTO `remoteaddress` (`id`, `ip`, `id_mk`) VALUES
 	(23012, '10.60.90.243', 1),
 	(23013, '10.60.90.244', 1),
 	(23014, '10.60.90.245', 1),
-	(239403, '10.60.90.246', 1),
+	(27078, '10.60.90.246', 1),
 	(23016, '10.60.90.247', 1),
 	(23017, '10.60.90.248', 1),
 	(23018, '10.60.90.249', 1),
@@ -25535,7 +25648,9 @@ INSERT INTO `remoteaddress` (`id`, `ip`, `id_mk`) VALUES
 	(25551, '10.60.100.252', 1),
 	(25552, '10.60.100.253', 1),
 	(25553, '10.60.100.254', 1);
+/*!40000 ALTER TABLE `remoteaddress` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.router
 DROP TABLE IF EXISTS `router`;
 CREATE TABLE IF NOT EXISTS `router` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25543,10 +25658,14 @@ CREATE TABLE IF NOT EXISTS `router` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.router: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `router` DISABLE KEYS */;
 INSERT INTO `router` (`id`, `descripcion`) VALUES
 	(1, 'CLIENTE'),
 	(2, 'EMPRESA');
+/*!40000 ALTER TABLE `router` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.sector
 DROP TABLE IF EXISTS `sector`;
 CREATE TABLE IF NOT EXISTS `sector` (
   `id_sec` int(11) NOT NULL AUTO_INCREMENT,
@@ -25556,9 +25675,13 @@ CREATE TABLE IF NOT EXISTS `sector` (
   UNIQUE KEY `id_sec` (`id_sec`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.sector: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `sector` DISABLE KEYS */;
 INSERT INTO `sector` (`id_sec`, `nombre`, `abreviacion`) VALUES
 	(7, 'CANABACOA', 'CNBCOA');
+/*!40000 ALTER TABLE `sector` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.serial
 DROP TABLE IF EXISTS `serial`;
 CREATE TABLE IF NOT EXISTS `serial` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25567,6 +25690,11 @@ CREATE TABLE IF NOT EXISTS `serial` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.serial: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `serial` DISABLE KEYS */;
+/*!40000 ALTER TABLE `serial` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.sms_gateway
 DROP TABLE IF EXISTS `sms_gateway`;
 CREATE TABLE IF NOT EXISTS `sms_gateway` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25575,9 +25703,13 @@ CREATE TABLE IF NOT EXISTS `sms_gateway` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.sms_gateway: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `sms_gateway` DISABLE KEYS */;
 INSERT INTO `sms_gateway` (`id`, `api`, `numero`) VALUES
 	(1, 'd927c48492fde6c89fddac146cb5b34d5f2e8cc4accd9', 18497545818);
+/*!40000 ALTER TABLE `sms_gateway` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.sms_plantilla
 DROP TABLE IF EXISTS `sms_plantilla`;
 CREATE TABLE IF NOT EXISTS `sms_plantilla` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25585,10 +25717,14 @@ CREATE TABLE IF NOT EXISTS `sms_plantilla` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.sms_plantilla: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `sms_plantilla` DISABLE KEYS */;
 INSERT INTO `sms_plantilla` (`id`, `mensaje`) VALUES
 	(1, 'Estimado cliente, se ha generado su factura de este mes favor de pagar a tiempo para evitar corte'),
 	(2, ' hola aviso de pago 2');
+/*!40000 ALTER TABLE `sms_plantilla` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.tipos_productos
 DROP TABLE IF EXISTS `tipos_productos`;
 CREATE TABLE IF NOT EXISTS `tipos_productos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25596,10 +25732,14 @@ CREATE TABLE IF NOT EXISTS `tipos_productos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.tipos_productos: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `tipos_productos` DISABLE KEYS */;
 INSERT INTO `tipos_productos` (`id`, `desc`) VALUES
 	(1, 'producto'),
 	(2, 'accesorio');
+/*!40000 ALTER TABLE `tipos_productos` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.tipo_pago
 DROP TABLE IF EXISTS `tipo_pago`;
 CREATE TABLE IF NOT EXISTS `tipo_pago` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25607,10 +25747,14 @@ CREATE TABLE IF NOT EXISTS `tipo_pago` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.tipo_pago: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `tipo_pago` DISABLE KEYS */;
 INSERT INTO `tipo_pago` (`id`, `descripcion`) VALUES
 	(1, 'EFECTIVO'),
 	(2, 'CREDITO');
+/*!40000 ALTER TABLE `tipo_pago` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.tipo_servicio
 DROP TABLE IF EXISTS `tipo_servicio`;
 CREATE TABLE IF NOT EXISTS `tipo_servicio` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25618,10 +25762,14 @@ CREATE TABLE IF NOT EXISTS `tipo_servicio` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.tipo_servicio: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `tipo_servicio` DISABLE KEYS */;
 INSERT INTO `tipo_servicio` (`id`, `nombre`) VALUES
 	(1, 'UTP'),
 	(2, 'FIBRA');
+/*!40000 ALTER TABLE `tipo_servicio` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.tmp
 DROP TABLE IF EXISTS `tmp`;
 CREATE TABLE IF NOT EXISTS `tmp` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -25632,6 +25780,11 @@ CREATE TABLE IF NOT EXISTS `tmp` (
   KEY `fecha` (`fecha`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.tmp: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `tmp` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tmp` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.trafico
 DROP TABLE IF EXISTS `trafico`;
 CREATE TABLE IF NOT EXISTS `trafico` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25643,6 +25796,11 @@ CREATE TABLE IF NOT EXISTS `trafico` (
   KEY `nombre` (`cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.trafico: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `trafico` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trafico` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.trafico_tmp
 DROP TABLE IF EXISTS `trafico_tmp`;
 CREATE TABLE IF NOT EXISTS `trafico_tmp` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -25653,6 +25811,11 @@ CREATE TABLE IF NOT EXISTS `trafico_tmp` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.trafico_tmp: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `trafico_tmp` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trafico_tmp` ENABLE KEYS */;
+
+-- Volcando estructura para tabla 7078.users
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25677,9 +25840,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
+-- Volcando datos para la tabla 7078.users: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `user_name`, `cell`, `estado`, `cargo`, `user_password_hash`, `user_email`, `date_added`, `nivel`, `foto`, `online`, `status`, `fecha_sesion`, `chk_act`, `chk_fec`, `chk_plan`, `chk_mac`) VALUES
 	(11, 'Tama', 'Comu', 'admin', '8298000000', 'si', 'Gerente', '$2y$10$1pW7c5i.CalQwQ61o76MgelnplPHpYjsx0HHVL50LMGbwMxYDphXe', 'tama@gmail.com', 'ente2018-04-15 05:1', 1, '', 1, 1, '2021-08-29 21:23:57', '1', '1', '1', '1');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.ventas
 DROP TABLE IF EXISTS `ventas`;
 CREATE TABLE IF NOT EXISTS `ventas` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -25688,6 +25855,8 @@ CREATE TABLE IF NOT EXISTS `ventas` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=utf8;
 
+-- Volcando datos para la tabla 7078.ventas: ~130 rows (aproximadamente)
+/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
 INSERT INTO `ventas` (`id`, `fecha`, `total`) VALUES
 	(1, '2020-07-07 18:29:47', 20.00),
 	(2, '2020-07-07 18:40:48', 23.00),
@@ -25819,7 +25988,9 @@ INSERT INTO `ventas` (`id`, `fecha`, `total`) VALUES
 	(131, '2020-08-24 13:34:28', 250.00),
 	(132, '2020-09-03 13:49:34', 250.00),
 	(133, '2020-09-12 10:34:31', 200.00);
+/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
 
+-- Volcando estructura para tabla 7078.vlan
 DROP TABLE IF EXISTS `vlan`;
 CREATE TABLE IF NOT EXISTS `vlan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -25827,3 +25998,11 @@ CREATE TABLE IF NOT EXISTS `vlan` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- Volcando datos para la tabla 7078.vlan: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `vlan` DISABLE KEYS */;
+/*!40000 ALTER TABLE `vlan` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

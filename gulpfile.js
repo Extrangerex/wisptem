@@ -14,25 +14,27 @@ gulp.task("deploy", () => {
       rejects("No appPort param has ben passed");
     }
 
-    const currentSql = fs.readFileSync("./wisptem.sql").toString();
+    const currentSql = fs.readFileSync("./wisptem.original.sql").toString();
 
     fs.writeFileSync(
-      `./src/wisptem.sql`,
+      `./wisptem.sql`,
       currentSql.replace(new RegExp(3015, "g"), dbPort)
     );
 
-    const dbConfig = fs.readFileSync("./src/config/db.php").toString();
+    const dbConfig = fs.readFileSync("./src/config/db.original.php").toString();
 
     fs.writeFileSync(
       `./src/config/db.php`,
-      dbConfig.replace(new RegExp(3015, "g"), dbPort)
+      dbConfig.replace(new RegExp("3940", "g"), dbPort)
     );
 
-    const dockerConfig = fs.readFileSync("./docker-compose.yml").toString();
+    const dockerConfig = fs
+      .readFileSync("./docker-compose.original.yml")
+      .toString();
 
     fs.writeFileSync(
       `./docker-compose.yml`,
-      dockerConfig.replace(new RegExp("5000:80", "g"), `${appPort}:80`)
+      dockerConfig.replace(new RegExp("45721:80", "g"), `${appPort}:80`)
     );
 
     resolve();
