@@ -25,7 +25,7 @@ gulp.task("deploy", () => {
 
     fs.writeFileSync(
       `./src/config/db.php`,
-      dbConfig.replace(new RegExp("3940", "g"), dbPort)
+      dbConfig.replace(new RegExp("1517", "g"), dbPort)
     );
 
     const dockerConfig = fs
